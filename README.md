@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This is a fork of the [google/simhospital](https://github.com/google/simhospital) repository because their Docker image is no longer available. You can use this Docker image freely, or contribute. At the present time we don't intend to make many changes to this code.
+
 # Simulated Hospital
 
 -   [Overview](#overview)
@@ -13,6 +16,20 @@ hospital patient data in
 ![Simulated Hospital Logo](./docs/images/simhospital_small.png)
 
 Disclaimer: This is not an officially supported Google product.
+
+## Quickstart
+
+Prerequisites: install [docker](https://www.docker.com/).
+
+Run the latest version of Simulated Hospital:
+
+```shell
+docker run --rm -it -p 8000:8000 ghcr.io/webamboos/simhospital:latest health/simulator
+```
+
+Stop the simulator with Ctrl-C.
+
+See more instructions on how to [download & run Simulated Hospital](./docs/get-started.md).
 
 ## Overview
 
@@ -99,17 +116,3 @@ defined with words that are common in clinical settings such as "admission",
     identifiers that Simulated Hospital generates, or create your own behavior
     for some events.
 
-## Quickstart
-
-Prerequisites: install [docker](https://www.docker.com/).
-
-Run the latest version of Simulated Hospital:
-
-```shell
-docker run --rm -it -p 8000:8000 eu.gcr.io/simhospital-images/simhospital:latest health/simulator
-```
-
-Stop the simulator with Ctrl-C.
-
-See more instructions on how to
-[download & run Simulated Hospital](./docs/get-started.md).
