@@ -1,0 +1,39 @@
+{
+	"name": "simhospital",
+	"runArgs": [
+		"--name",
+		"${localEnv:USER}${localEnv:USERPROFILE}.simhospital"
+	],
+	"image": "mcr.microsoft.com/devcontainers/base:trixie",
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,readonly,type=bind"
+	],
+	"features": {
+		"ghcr.io/devcontainers-community/features/bazel:1": {
+			"bazelisk_version": "latest",
+			"buildifier_version": "latest"
+		},
+		"ghcr.io/devcontainers/features/go": {
+			"version": "1.24"
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker": {
+			"version": "latest",
+			"installDockerBuildx": true,
+			"moby": false
+		},
+		"ghcr.io/nils-geistmann/devcontainers-features/zsh": {
+			"plugins": "git docker nvm bazel"
+		},
+		"ghcr.io/devcontainers/features/python": {
+			"version": "3.12"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"BazelBuild.vscode-bazel",
+				"golang.go"
+			]
+		}
+	}
+}
